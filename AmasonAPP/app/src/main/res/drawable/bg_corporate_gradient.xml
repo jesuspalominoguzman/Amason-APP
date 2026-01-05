@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo con degradado lineal usando la paleta corporativa de azul oscuro a claro -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="135"
+        android:startColor="@color/amason_azul_oscuro"
+        android:centerColor="@color/amason_azul_medio"
+        android:endColor="@color/amason_azul_claro"
+        android:type="linear"/>
+</shape>

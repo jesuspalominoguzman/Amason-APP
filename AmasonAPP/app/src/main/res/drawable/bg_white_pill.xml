@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo blanco con bordes muy redondeados para cabeceras y menús inferiores -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color de fondo blanco puro -->
+    <solid android:color="@color/white"/>
+    <!-- Bordes redondeados de gran radio para estilo "pill" o burbuja -->
+    <corners android:radius="24dp"/>
+</shape>

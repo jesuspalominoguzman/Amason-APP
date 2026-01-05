@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores Básicos -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Colores Corporativos Amason (Paleta Oficial) -->
+    <!-- Oxford Navy: Color principal para fondos oscuros y barras de estado -->
+    <color name="amason_azul_oscuro">#1F385A</color>
+    <!-- Cornflower Ocean: Color para botones secundarios y acentos -->
+    <color name="amason_azul_medio">#2A6E9E</color>
+    <!-- Blue Bell: Color de destaque para elementos interactivos -->
+    <color name="amason_azul_claro">#43A0D7</color>
+    <!-- Vivid Tangerine: Color para llamadas a la acción (FAB, botones principales) -->
+    <color name="amason_naranja">#FF8000</color>
+    
+    <!-- Variaciones de Soporte para la Interfaz (UI Support Colors) -->
+    <!-- Fondos de secciones y elementos clarificados -->
+    <color name="amason_azul_muy_claro">#87CEEB</color>
+    <!-- Color neutro para textos no prioritarios o iconos secundarios -->
+    <color name="amason_gris_azulado">#5A7A99</color>
+    <!-- Alias semánticos para mayor legibilidad en el código de layouts -->
+    <color name="fondo_claro">#F0F4F8</color>
+    <color name="texto_oscuro">#1F385A</color>
+    <color name="texto_secundario">#5A7A99</color>
+    <color name="texto_gris">#5A7A99</color>
+</resources>

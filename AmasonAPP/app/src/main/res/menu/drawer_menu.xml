@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_login"
+        android:icon="@drawable/ic_login"
+        android:title="Login" />
+    
+    <item
+        android:id="@+id/nav_database"
+        android:icon="@drawable/ic_database"
+        android:title="Database" />
+    
+    <item
+        android:id="@+id/nav_ftp"
+        android:icon="@drawable/ic_ftp"
+        android:title="FTP" />
+    
+    <item
+        android:id="@+id/nav_email"
+        android:icon="@drawable/ic_email"
+        android:title="Email" />
+    
+    <item
+        android:id="@+id/nav_mailbox"
+        android:icon="@drawable/ic_mailbox"
+        android:title="Mailbox" />
+    
+    <item
+        android:id="@+id/nav_admin"
+        android:icon="@drawable/ic_admin"
+        android:title="Admin" />
+
+    <item
+        android:id="@+id/nav_logs"
+        android:icon="@drawable/ic_logs"
+        android:title="Logs" />
+</menu>

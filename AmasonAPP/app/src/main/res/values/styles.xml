@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ESTILOS DE COMPONENTES VISUALES -->
+
+    <!-- Estilo para imágenes con bordes redondeados (Tutoriales, Cards) -->
+    <style name="RoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!-- ESTILOS DE TEXTO PARA NAVEGACIÓN -->
+
+    <!-- Texto para ítems del menú lateral (Navigation Drawer) -->
+    <style name="DrawerItemText" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- ESTILOS DE BOTONES Y UI -->
+
+    <!-- Estilo base para los botones de cambio de idioma -->
+    <style name="LanguageButtonStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:backgroundTint">@color/amason_azul_medio</item>
+    </style>
+
+    <!-- Estilo para las tarjetas de información y tutoriales -->
+    <style name="InfoCardStyle">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <!-- ESTILOS DE TEXTO JUSTIFICADO (API 26+) -->
+    <style name="JustifiedTextStyle">
+        <item name="android:justificationMode" xmlns:tools="http://schemas.android.com/tools" tools:targetApi="o">inter_word</item>
+    </style>
+
+</resources>

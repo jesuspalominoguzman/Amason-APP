@@ -1,0 +1,85 @@
+plugins {
+    alias(libs.plugins.android.application)
+    // plugin para poder trabajar con firebase a nivel de app
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.amasonapp'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.example.amasonapp"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    // Configuración automática de JavaDoc para cada variante del proyecto
+    applicationVariants.all { variant ->
+        task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+            description "Genera la documentación Javadoc para la variante ${variant.name}."
+            group "Documentation"
+            
+            // Origen de los archivos Java
+            source = variant.javaCompileProvider.get().source
+            
+            // Crucial: Incluimos el SDK de Android y todas las librerías dependientes (Firebase, AndroidX, etc)
+            classpath = variant.javaCompileProvider.get().classpath + project.files(android.getBootClasspath())
+            
+            // Carpeta de destino profesional
+            destinationDir = file("${project.buildDir}/outputs/javadoc/${variant.name}")
+
+            options {
+                encoding = 'UTF-8'
+                charSet = 'UTF-8'
+                docEncoding = 'UTF-8'
+                memberLevel = JavadocMemberLevel.PRIVATE
+                // Ignorar errores de sintaxis de Android que Javadoc no entiende de forma nativa
+                addStringOption('Xdoclint:none', '-quiet')
+            }
+            
+            // Evitamos que falle por avisos menores en librerías externas
+            failOnError false
+        }
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.firebase.firestore
+    implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // dependencias necesarias para poder trabajar con firebase
+    implementation platform('com.google.firebase:firebase-bom:34.6.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-storage'
+    
+    // dependencias para autenticacion con Google
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    
+    // Glide para carga de imagenes desde URLs
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+}

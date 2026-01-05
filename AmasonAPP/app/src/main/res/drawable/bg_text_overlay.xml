@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo semitransparente azulado para destacar textos sobre imágenes o fondos complejos -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color azul medio con 80% de opacidad (CC) -->
+    <solid android:color="#CC2A6E9E"/>
+    <!-- Bordes redondeados suaves -->
+    <corners android:radius="16dp"/>
+    <!-- Espaciado interno para que el texto no toque los bordes -->
+    <padding
+        android:left="16dp"
+        android:right="16dp"
+        android:top="8dp"
+        android:bottom="8dp"/>
+</shape>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo para el distintivo (badge) del usuario en la parte superior -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color azul muy claro para contraste -->
+    <solid android:color="@color/amason_azul_muy_claro"/>
+    <!-- Bordes circulares -->
+    <corners android:radius="20dp"/>
+    <!-- Margen interno para el icono y nombre del usuario -->
+    <padding
+        android:left="12dp"
+        android:right="12dp"
+        android:top="8dp"
+        android:bottom="8dp"/>
+</shape>

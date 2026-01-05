@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <!-- CONTENEDOR PRINCIPAL: Interfaz que contiene el menú y el contenido -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/amason_azul_muy_claro">
+
+        <!-- CABECERA SUPERIOR (Header): Barra blanca superior con info de usuario y botones -->
+        <LinearLayout
+            android:id="@+id/header_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_white_pill"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:elevation="8dp">
+
+            <!-- IDENTIFICADOR DE USUARIO: Icono y nombre del usuario autenticado -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_user_badge"
+                android:gravity="center_vertical"
+                android:minWidth="180dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+                
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_user"
+                    android:contentDescription="Icono de usuario"
+                    android:layout_marginEnd="8dp"/>
+                
+                <TextView
+                    android:id="@+id/textView_user_greeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Usuario"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/amason_azul_oscuro"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+            </LinearLayout>
+
+            <!-- CONTROLES DE SESIÓN E IDIOMA -->
+            <Button
+                android:id="@+id/button_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salir"
+                android:textSize="12sp"
+                android:backgroundTint="@color/amason_naranja"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/button_traduccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/idioma_espanol"
+                style="@style/LanguageButtonStyle"
+                app:layout_constraintBaseline_toBaselineOf="@id/button_logout"/>
+
+        </LinearLayout>
+        
+        <!-- CONTENEDOR DE FRAGMENTS: Espacio dinámico donde se cargan los tutoriales -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/header_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <!-- BOTÓN FLOTANTE (FAB): Abre el catálogo de tutoriales (Menú Lateral) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="Abrir catálogo de tutoriales"
+            app:backgroundTint="@color/amason_naranja"
+            app:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="16dp"
+            app:elevation="8dp"/>
+        
+        <!-- ESTADO SIN CONEXIÓN: Se muestra cuando se pierde el acceso a internet -->
+        <LinearLayout
+            android:id="@+id/layout_sin_conexion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:padding="32dp"
+            app:layout_constraintTop_toTopOf="@id/fragment_container"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icono_sin_conexion"
+                android:textSize="64sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_sin_conexion"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/amason_azul_oscuro"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mensaje_sin_conexion"
+                android:textSize="14sp"
+                android:textColor="@color/amason_gris_azulado"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                style="@style/JustifiedTextStyle"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- MENÚ LATERAL (Navigation Drawer): Contiene los accesos directos a los temas -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_drawer_gradient"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu"
+        app:itemIconTint="@color/amason_naranja"
+        app:itemTextColor="@color/amason_azul_oscuro"
+        app:itemShapeFillColor="@android:color/transparent"
+        app:itemRippleColor="@color/amason_azul_muy_claro"
+        app:itemIconSize="28dp"
+        app:itemTextAppearance="@style/DrawerItemText"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

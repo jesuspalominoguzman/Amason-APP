@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AmasonAPP</string>
+    
+    <!-- Botón de cambio de idioma -->
+    <string name="idioma_espanol">ES</string>
+    
+    <!-- Mensajes de sin conexión a Internet -->
+    <string name="icono_sin_conexion">📡</string>
+    <string name="titulo_sin_conexion">Sin conexión a Internet</string>
+    <string name="mensaje_sin_conexion">Por favor, conecta tu dispositivo a Internet</string>
+    
+    <!-- NOTA: El string 'default_web_client_id' se genera automáticamente desde google-services.json -->
+    <!-- No es necesario agregarlo manualmente aquí -->
+    
+    <!-- NOTA: Los textos multilingües (login_bienvenida, login_boton_google, logout, etc.) -->
+    <!-- están en Firebase Firestore en la colección 'traducciones' -->
+</resources>

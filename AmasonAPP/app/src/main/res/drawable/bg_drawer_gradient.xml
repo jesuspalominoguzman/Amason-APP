@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fondo del menú lateral (Drawer) con el color corporativo sólido -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Restaurado a color sólido para mantener la estética original -->
+    <solid android:color="@color/white"/>
+    <!-- Esquina superior derecha redondeada para el efecto de apertura -->
+    <corners android:topRightRadius="24dp"/>
+</shape>
